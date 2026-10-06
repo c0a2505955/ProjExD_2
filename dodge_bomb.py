@@ -55,7 +55,6 @@ def main():
         kk_rct.move_ip(sum_mv)
         screen.blit(kk_img, kk_rct)
 
-
         bb_rct.move_ip(vx, vy)  # 練習2: 爆弾動く
         screen.blit(bb_img, bb_rct)  # 練習2: 爆弾表示
         pg.display.update()

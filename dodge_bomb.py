@@ -23,11 +23,11 @@ def main():
     bb_img = pg.Surface((20, 20)) #空のsurface
     pg.draw.circle(bb_img, (255, 0, 0), (10, 10), 10) #赤い爆弾
     
-    #bb_img.set_colorkey((0, 0, 0))  # 練習2: 黒四隅をなくす
+    bb_img.set_colorkey((0, 0, 0))  # 練習2: 黒四隅をなくす
     bb_rct = bb_img.get_rect()
     bb_rct.centerx = random.randint(0, WIDTH)  # 横座標乱数
     bb_rct.centery = random.randint(0, HEIGHT)  # 縦座標乱数
-    #vx, vy = +5, +5  # 練習2: 爆弾初期速度
+    vx, vy = +5, +5  # 練習2: 爆弾初期速度
     clock = pg.time.Clock()
     tmr = 0
     while True:
@@ -55,8 +55,8 @@ def main():
         kk_rct.move_ip(sum_mv)
         screen.blit(kk_img, kk_rct)
 
-        #bb_rct.move_ip(vx, vy)  # 練習2: 爆弾動く
-        #screen.blit(bb_img, bb_rct)  # 練習2: 爆弾表示
+        bb_rct.move_ip(vx, vy)  # 練習2: 爆弾動く
+        screen.blit(bb_img, bb_rct)  # 練習2: 爆弾表示
         pg.display.update()
         tmr += 1
         clock.tick(50)
